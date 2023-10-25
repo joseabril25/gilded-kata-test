@@ -13,7 +13,7 @@ export class GildedRose {
     this.items.map(item => {
       if(item.name === 'Aged Brie') {
         item = UpdateAgedBrie(item);
-      } else if (item.name.includes('Backstage')) {
+      } else if (item.name.includes('Backstage passes')) {
         item = UpdateBackstagePasses(item);
       } else if (item.name.includes('Conjured')) {
         item = UpdateConjuredItems(item);
