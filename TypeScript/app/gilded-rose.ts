@@ -1,5 +1,5 @@
 import { Item } from "./item";
-import { UpdateAgedBrie, UpdateBackstagePasses, UpdateConjuredItems, UpdateNormalItems } from "./update";
+import { UpdateAgedBrie, UpdateBackstagePasses, UpdateConjuredItems, UpdateNormalItems, UpdateSulfuras } from "./update";
 
 
 export class GildedRose {
@@ -20,6 +20,9 @@ export class GildedRose {
           break;
         case 'Conjured Mana Cake':
           item = UpdateConjuredItems(item);
+          break;
+        case 'Sulfuras, Hand of Ragnaros':
+          item = UpdateSulfuras(item);
           break;
         default:
           item = UpdateNormalItems(item);

@@ -28,11 +28,17 @@ export const UpdateBackstagePasses = (item: Item) => {
 
 export const UpdateNormalItems = (item: Item) => {
   if (item.quality < 50) {
-    if(item.sellIn < 0) {
+    if(item.sellIn <= 0) {
       if (item.quality === 0) {
         return item;
       } else {
         item.quality = item.quality - 2
+      }
+    } else {
+      if (item.quality === 0) {
+        return item;
+      } else {
+        item.quality = item.quality - 1
       }
     }
     item.sellIn = item.sellIn - 1;
