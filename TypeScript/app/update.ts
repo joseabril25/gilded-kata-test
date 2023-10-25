@@ -1,9 +1,12 @@
 import { Item } from './item';
 
+const maximumQuality = 50;
+
+const increaseQuality = (quality: number) => quality < maximumQuality ? quality + 1 : quality;
+
 export const UpdateAgedBrie = (item: Item) => {
-  if (item.quality < 50) {
-    item.quality = item.quality + 1
-  }
+  item.quality = increaseQuality(item.quality);
+  item.sellIn = item.sellIn - 1;
   return item;
 }
 
