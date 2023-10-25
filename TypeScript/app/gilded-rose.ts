@@ -1,4 +1,5 @@
 import { Item } from "./item";
+import { UpdateAgedBrie, UpdateNormalItems } from "./update";
 
 
 export class GildedRose {
@@ -6,6 +7,20 @@ export class GildedRose {
 
   constructor(items = [] as Array<Item>) {
     this.items = items;
+  }
+
+  newUpdateQuality(): Item[] {
+    this.items.map(item => {
+      switch (item.name) {
+        case 'Aged Brie':
+          item = UpdateAgedBrie(item);
+          break;
+        default:
+          item = UpdateNormalItems(item);
+      }
+    });
+
+    return this.items;
   }
 
   updateQuality() {
