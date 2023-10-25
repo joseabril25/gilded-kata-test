@@ -29,5 +29,5 @@ for (let i = 0; i < days; i++) {
 
   });
   console.log();
-  gildedRose.newUpdateQuality();
+  gildedRose.updateQuality();
 }
