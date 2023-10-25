@@ -11,18 +11,17 @@ export const UpdateAgedBrie = (item: Item) => {
 }
 
 export const UpdateBackstagePasses = (item: Item) => {
-  if (item.quality < 50) {
-    item.quality = item.quality + 1
-    if (item.sellIn < 11) {
-      if (item.quality < 50) {
-        item.quality = item.quality + 2
-      }
+  if (item.quality <= 50) {
+    if (item.sellIn === 0) {
+      item.quality = 0;
+    } else if (item.sellIn < 6) {
+      item.quality = item.quality + 3
+    } else if (item.sellIn < 11) {
+      item.quality = item.quality + 2
+    } else {
+      item.quality = item.quality + 1
     }
-    if (item.sellIn < 6) {
-      if (item.quality < 50) {
-        item.quality = item.quality + 5
-      }
-    }
+    item.sellIn = item.sellIn - 1;
   }
   return item;
 }

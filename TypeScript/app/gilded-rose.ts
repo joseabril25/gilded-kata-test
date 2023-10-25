@@ -1,5 +1,5 @@
 import { Item } from "./item";
-import { UpdateAgedBrie, UpdateNormalItems } from "./update";
+import { UpdateAgedBrie, UpdateBackstagePasses, UpdateNormalItems } from "./update";
 
 
 export class GildedRose {
@@ -15,8 +15,12 @@ export class GildedRose {
         case 'Aged Brie':
           item = UpdateAgedBrie(item);
           break;
+        case 'Backstage passes to a TAFKAL80ETC concert':
+          item = UpdateBackstagePasses(item);
+          break;
         default:
           item = UpdateNormalItems(item);
+          break;
       }
     });
 
