@@ -1,5 +1,5 @@
 import { Item } from "./item";
-import { UpdateAgedBrie, UpdateBackstagePasses, UpdateNormalItems } from "./update";
+import { UpdateAgedBrie, UpdateBackstagePasses, UpdateConjuredItems, UpdateNormalItems } from "./update";
 
 
 export class GildedRose {
@@ -17,6 +17,9 @@ export class GildedRose {
           break;
         case 'Backstage passes to a TAFKAL80ETC concert':
           item = UpdateBackstagePasses(item);
+          break;
+        case 'Conjured Mana Cake':
+          item = UpdateConjuredItems(item);
           break;
         default:
           item = UpdateNormalItems(item);

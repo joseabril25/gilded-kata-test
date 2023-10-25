@@ -35,6 +35,7 @@ export const UpdateNormalItems = (item: Item) => {
         item.quality = item.quality - 2
       }
     }
+    item.sellIn = item.sellIn - 1;
   }
   return item;
 }
@@ -46,6 +47,7 @@ export const UpdateSulfuras = (item: Item) => {
 export const UpdateConjuredItems = (item: Item) => {
   if (item.quality > 0) {
     item.quality = item.quality - 2
+    item.sellIn = item.sellIn - 1;
   }
   return item;
 }
